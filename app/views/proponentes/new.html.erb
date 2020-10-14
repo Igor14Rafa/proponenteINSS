@@ -1,0 +1,16 @@
+<div>
+    <h1>Novo Proponente</h1>
+
+    <%= render 'form', proponente: @proponente %>
+
+    <%= link_to 'Voltar', proponentes_path %>
+    <%= javascript_tag do %>
+        $("#form_salario").on('input', function(){
+          $.ajax({
+            url: '/proponentes/get_desconto',
+            data: { salario: $(this).val() },
+            dataType: 'script'
+          })
+        });
+    <% end %>
+</div>

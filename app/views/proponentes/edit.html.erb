@@ -1,0 +1,17 @@
+<div>
+    <h1>Editar Proponente</h1>
+
+    <%= render 'form', proponente: @proponente %>
+
+    <%= link_to 'Detalhes', @proponente %> |
+    <%= link_to 'Voltar', proponentes_path %>
+    <%= javascript_tag do %>
+        $(document).ready(function(){
+          $.ajax({
+            url: '/proponentes/get_desconto',
+            data: { salario: $("#form_salario").val() },
+            dataType: 'script'
+          })
+        });
+    <% end %>
+</div>

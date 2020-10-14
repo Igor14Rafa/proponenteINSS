@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container-fluid" style="text-align:center">
+  <h1>Proponentes</h1>
+</div>
+
+<table class="table table-sm table-bordered table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>Nome</th>
+      <th>Cpf</th>
+      <th>Data nasc</th>
+      <th>Logradouro</th>
+      <th>Numero</th>
+      <th>Bairro</th>
+      <th>Cidade</th>
+      <th>Estado</th>
+      <th>Cep</th>
+      <th>Telefone pessoal</th>
+      <th>Telefone referencia</th>
+      <th>Salario</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @proponentes.each do |proponente| %>
+      <tr>
+        <td><%= proponente.nome %></td>
+        <td><%= proponente.cpf %></td>
+        <td><%= proponente.data_nasc %></td>
+        <td><%= proponente.logradouro %></td>
+        <td><%= proponente.numero %></td>
+        <td><%= proponente.bairro %></td>
+        <td><%= proponente.cidade %></td>
+        <td><%= proponente.estado %></td>
+        <td><%= proponente.cep %></td>
+        <td><%= proponente.telefone_pessoal %></td>
+        <td><%= proponente.telefone_referencia %></td>
+        <td><%= proponente.salario %></td>
+        <td><%= link_to 'Detalhes', proponente %></td>
+        <td><%= link_to 'Editar', edit_proponente_path(proponente) %></td>
+        <td><%= link_to 'Deletar', proponente, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div class="container-fluid" style="text-align:center;margin-bottom: 50px">
+<%= link_to 'Adicionar Proponente', new_proponente_path, class: "btn btn-primary" %>
+</div>

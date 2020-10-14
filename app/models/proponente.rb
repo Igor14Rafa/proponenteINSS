@@ -1,0 +1,2 @@
+class Proponente < ApplicationRecord
+end

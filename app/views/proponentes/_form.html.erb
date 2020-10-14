@@ -1,0 +1,84 @@
+<div>
+  <%= form_with(model: proponente, local: true) do |form| %>
+    <% if proponente.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(proponente.errors.count, "error") %> prohibited this proponente from being saved:</h2>
+
+        <ul>
+          <% proponente.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= form.label :nome %>
+      <%= form.text_field :nome %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :cpf %>
+      <%= form.text_field :cpf %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :data_nascimento %>
+      <%= form.date_select :data_nasc %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :logradouro %>
+      <%= form.text_field :logradouro %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :número %>
+      <%= form.text_field :numero %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :bairro %>
+      <%= form.text_field :bairro %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :cidade %>
+      <%= form.text_field :cidade %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :estado %>
+      <%= form.text_field :estado %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :cep %>
+      <%= form.text_field :cep %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :telefone_pessoal %>
+      <%= form.text_field :telefone_pessoal %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :telefone_referencia %>
+      <%= form.text_field :telefone_referencia %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :salário %>
+      <%= form.text_field :salario, id: "form_salario" %>
+    </div>
+
+    <div class="form-group">
+    <%= form.label :desconto %>
+    <%= form.text_field :desconto_inss, id: "form_desconto" %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+</div>
